@@ -1,0 +1,8 @@
+main: me.classified.atlasconfirm.AtlasConfirm
+version: 1.0.3
+name: AtlasConfirm
+author: ClassifiedDev
+commands:
+  confirm:
+  givepackage:
+  atlasconfirm:
