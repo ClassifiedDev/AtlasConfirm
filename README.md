@@ -34,3 +34,7 @@ COMMANDS
 PERMISSIONS
 - atlasconfirm.givepackage - Permission to run the /givepackage command.
 - atlasconfirm.reload - Permission to run the /atlasconfirm reload comand
+
+CONFIG
+
+```Test```
