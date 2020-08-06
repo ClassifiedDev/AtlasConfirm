@@ -4,8 +4,8 @@ A package confirm/claim system, created for Buycraft.
 
 AtlasConfirm is a plugin that should be used in combination with a monetization service such as Buycraft. It is used as a confirmation system to prevent unauthorized purchases on a player's account. When a player purchases an item off of your server store instead of instantly receiving the item in their inventory they will be prompted to run the /confirm command which will open a menu showing the packages they have purchased.
 
-![AtlasConfirm](https://i.imgur.com/UPP5swt.png)
 ![AtlasConfirm](https://i.imgur.com/UuJZSka.png)
+![AtlasConfirm](https://i.imgur.com/UPP5swt.png)
 ![AtlasConfirm](https://i.imgur.com/qy5Qv1b.png)
 
 They then will need to either left-click the package to confirm they made the purchase and receive their goods or alternatively right-click the package to deny it which will delete the items they would have gotten originally.
