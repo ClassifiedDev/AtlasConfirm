@@ -26,15 +26,79 @@ In order to set this plugin up simply configure the messages to your liking and 
 And there you go! You're all set up! Now instead of your players instantly getting their items, they will need to claim them from the confirmation menu.
 
 
-COMMANDS
+**COMMANDS**
 - /confirm - Opens the package claim menu.
 - /givepackage <player> <package id> <transaction id> - Adds a package to a players confirmation meny. Package id would be whatever you setup in the config.yml.
 - /atlasconfirm reload - Reloads the config.yml
 
-PERMISSIONS
+**PERMISSIONS**
 - atlasconfirm.givepackage - Permission to run the /givepackage command.
 - atlasconfirm.reload - Permission to run the /atlasconfirm reload comand
 
-CONFIG
+**CONFIG**
+**NOTICE:** Please be sure when configuring the plugin to have all of your package id's/names lowercase.
 
-```Test```
+```
+########################################################################################################
+########## AtlasConfirm v1.0 developed by Classified Dev. Discord: https://discord.gg/c9BCaNn ##########
+########################################################################################################
+inventory:
+  title: '&8Buycraft Package Claim'
+  package-lore:
+    - '&7Click item to claim this Buycraft package.'
+    - ' '
+    - '&c&lNOTE: &7If you do &7&nNOT&r &7wish to accept'
+    - '&7this package, please right-click it.'
+    - ' '
+    - '&4&lWARNING: &7By accepting this package'
+    - '&7you claim full responsibility for the'
+    - '&7payment and you will be banned if it is'
+    - '&7flagged as fraudulent or if the payment'
+    - '&7is charged-back by PayPal.'
+    - ' '
+    - '&3&lPACKAGE ID: &7%package_id%'
+    - '&3&lTRANSACTION ID: &7%transaction_id%'
+
+messages:
+  no-permission: '&c&l(!) &cYou do not have permission to use this command!'
+  player-not-found: '&c&l(!) &cA player with that name could not be found!'
+  package-not-found: '&c&l(!) &cA package with that name could not be found!'
+  reload: '&6&l(!) &6Atlas Confirm config.yml has been reloaded.'
+  atlasconfirm-usage:
+    - '&c&l(!) &cUsages: &7/atlasconfirm reload'
+    - '&8&l* &7Reloads the Atlas Confirm config.yml.'
+  givepackage-usage:
+    - '&c&l(!) &cUsage: &7/givepackage <player> <package> <transaction id>'
+    - '&8&l* &7Sends a player a Buycraft package for them to claim with /confirm.'
+  confirm-notify: #This message is sent to the player when they have an available package to claim.
+    - ''
+    - '&8&l(&a&l*&8&l) &a&lYOU HAVE A BUYCRAFT PACKAGE TO CLAIM!'
+    - '&8&l* &7Please type /confirm to claim your packages.'
+    - ''
+ 
+  confirm-remaining: #This message is sent to the player when they claim a package and they still have packages remaining to claim.
+    - ''
+    - '&8&l(&6&l*&8&l) &6&lYOU STILL HAVE REMAINING BUYCRAFT PACKAGE(S) TO CLAIM!'
+    - '&8&l* &7Please type /confirm to claim your packages.'
+    - ''
+
+  no-packages: #This message is sent to the player when they attempt to run the /confirm command and there is nothing available to claim.
+    - '&c&l(!) &cYou do not have any available Buycraft packages to claim!'
+    - '&8&l* &7If you just purchased a package please wait up to 15 minutes to receive it in-game.'
+
+  package-accepted: #This message is sent to the player when they accept a package.
+    - '&8&l(&a&l*&8&l) &a&lYOU HAVE &a&l&nACCEPTED&r &a&lTHE BUYCRAFT PACKAGE: &3&l%package_name%'
+
+  package-denied: #This message is sent to the player when they deny a package.
+    - '&8&l(&c&l*&8&l) &c&lYOU HAVE &c&l&nDENIED&r &c&lTHE BUYCRAFT PACKAGE: &3&l%package_name%'
+
+  donation: #This message is sent to the whole server when a player accepts a package.
+    - '&8&l(&3&l*&8&l) &3%player% &7has donated at &3&nshop.yourserver.com &7with &c&l25% OFF SALE!'
+
+# Package configuration section. You can add as many packages as you'd like. Just copy and paste the format.
+packages:
+  diamond:    (Lowercase)     #Name of package used in givepackage command. Ex: /givepackage Steve hero TRANSACTIONID
+    name: '&3&l32x Diamonds'            #Name of package in /confirm GUI
+    commands:                           #Commands to be run when package is claimed.
+      - 'give %name% diamond 32'
+```
